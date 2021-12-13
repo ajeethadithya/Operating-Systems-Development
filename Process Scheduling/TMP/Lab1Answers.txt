@@ -1,0 +1,47 @@
+                                                                 PA1 Additional Questions:
+
+1.What are the advantages and disadvantages of each of the two scheduling policies? 
+  Also, give the advantages and disadvantages of the round robin scheduling policy originally implemented in Xinu.
+
+A) EXPONENTIAL DISTRIBUTION SCHEDULER:
+
+	Advantages:
+	-> This scheduler selects processes based on the generated random number, and hence each process get a chance to get scheduled due to the randomness.
+	-> Since the random number generator is based on exponential distribution, we can manipulate the lambda value and control which range of process
+           priorities get more chance of getting selected.	
+	-> The scheduling avoids starvation of processes.
+
+	Disadvantages:
+	->Not all processes get equal treatment because of the exponential distribution. Hence choosing a good lambda value is important.
+	
+B) LINUX-LIKE SCHEDULER::
+
+	Advantages:
+	-> The CPU time of each process is monitored and priority is assigned accordingly for the next epoch. This promotes fairness among processes.
+	-Starvation is avoided by providing quantum for each process in every epoch.
+
+	Disadvantages:
+	-> Linux-like Scheduler is very complex compared to the other two schedulers. Scheduling time becomes very large as number of processes increases.
+
+C) XINU SCHEDULER:
+
+	Advantages:	
+	-> It is a very simple and fast scheduler, as very little computation is required to select the processes which need to be scheduled next.
+
+	Disadvantages:
+	-> Processes which have low priority might have to wait for a long time before they are given CPU time.
+	-> Starvation is a possibility with this scheduler, as high priority processes are always executed first.
+
+2. Describe the way each of the schedulers affects the NULL process.
+
+A) EXPONENTIAL DISTRIBUTION SCHEDULER:
+
+	NULL process is allowed to execute when the ready queue is empty.
+
+B) LINUX LIKE SCHEDULER:
+
+	NULL process is allowed to execute when the ready queue is empty.
+
+C) XINU SCHEDULER:
+
+	Xinu Scheduler does not schedule NULL process.
