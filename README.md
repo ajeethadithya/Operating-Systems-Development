@@ -9,7 +9,7 @@ Exponential Distribution Scheduler:
 	• Processes with the same priority are scheduled in a round-robin fashion.
 
 Linux-like Scheduler:
-	• Implemented a scheduler which is based on the Linux scheduler in the 2.2 kernel.
+	• Implemented a scheduler which is based on the Linux scheduler in the 2.2 kernel. <br>
 	• The CPU time consists of epochs, and in every epoch, each process is allowed to run up to a given time quantum.
 	• The time quantum for each process is based on a goodness value, which is determined by the priority of the process and the remaining quantum from the previous epoch.
 
